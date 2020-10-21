@@ -33,4 +33,9 @@ int main() {
   readImage(input, image, h, w);
   scale(image,imgScaled,h,w);
   writeImage2("taskE.pgm",imgScaled, h * 2, w * 2);
+
+  // Task F. Pixelate
+  readImage(input, image, h, w);
+  pixelate(image,h,w);
+  writeImage("taskF.pgm",image,h,w);
 }

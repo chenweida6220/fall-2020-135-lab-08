@@ -56,3 +56,16 @@ void scale(int img[MAX_H][MAX_W], int imgScaled[MAX_H*2][MAX_W*2], int h, int w)
     }
   }
 }
+
+// Task F. Pixelate
+void pixelate(int img[MAX_H][MAX_W],int h, int w) {
+  for (int i = 0; i < h; i += 2) {
+    for (int j = 0; j < w; j += 2) {
+      int average = (img[i][j] + img[i+1][j] + img[i][j+1] + img[i+1][j+1]) / 4;
+      img[i][j] = average;
+      img[i+1][j] = average;
+      img[i][j+1] = average;
+      img[i+1][j+1] = average;
+    }
+  }
+}
