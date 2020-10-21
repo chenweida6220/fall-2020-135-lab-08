@@ -1,7 +1,5 @@
 main: main.o imageio.o funcs.o
 	g++ -o main main.o imageio.o funcs.o
-	@echo
-	@echo If segmentation fault due to stack overflowing, run ulimit -s unlimited
 
 main.o: main.cpp funcs.h imageio.h
 
