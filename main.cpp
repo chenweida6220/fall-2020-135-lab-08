@@ -5,6 +5,7 @@ using namespace std;
 
 int main() {
   int image[MAX_H][MAX_W];
+  int imgOutput[MAX_H][MAX_W];
   int h,w;
   string input = "cat.pgm";
 
@@ -38,4 +39,9 @@ int main() {
   readImage(input, image, h, w);
   pixelate(image,h,w);
   writeImage("taskF.pgm",image,h,w);
+
+  // Task G (Bonus). Kernel method image filtering
+  readImage(input, image, h, w);
+  kernel(image,imgOutput,h,w);
+  writeImage("taskG.pgm",imgOutput,h,w);
 }

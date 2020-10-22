@@ -69,3 +69,26 @@ void pixelate(int img[MAX_H][MAX_W],int h, int w) {
     }
   }
 }
+
+// Task G (Bonus). Kernel method image filtering
+void kernel(int img[MAX_H][MAX_W],int imgOutput[MAX_H][MAX_W],int h, int w) {
+  int edge = 0;
+  for (int i = 0; i < h; i++) {
+    for (int j = 0; j < w; j++) {
+      imgOutput[i+1][j+1] = img[i][j];
+
+      // f(a,b,c,d,e,f,g,h,i) = (g+2h+i)-(a+2b+c)
+      // to detect horizontal edge
+      edge = (img[i + 1][j - 1] + (2 * img[i + 1][j]) + img[i + 1][j + 1])
+      - (img[i - 1][j - 1] + (2 * img[i - 1][j]) + img[i - 1][j + 1]);
+
+      if (edge > 255) {
+        edge = 255;
+      }
+      else if (edge < 0) {
+        edge = 0;
+      }
+      imgOutput[i][j] = edge;
+    }
+  }
+}
