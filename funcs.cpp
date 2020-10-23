@@ -75,6 +75,7 @@ void kernel(int img[MAX_H][MAX_W],int imgOutput[MAX_H][MAX_W],int h, int w) {
   int edge = 0;
   for (int i = 0; i < h; i++) {
     for (int j = 0; j < w; j++) {
+      // assign black color to the boundary pixels in the output
       if (i == 0 || j == 0) {
         imgOutput[i][j] = 0;
       }
