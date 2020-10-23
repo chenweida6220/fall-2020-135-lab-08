@@ -7,7 +7,7 @@ int main() {
   int image[MAX_H][MAX_W];
   int imgOutput[MAX_H][MAX_W];
   int h,w;
-  string input = "image1.pgm";
+  string input = "cat.pgm";
 
   // Task A. Invert colors
   readImage(input, image, h, w);
